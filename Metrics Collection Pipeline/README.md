@@ -74,6 +74,7 @@ project/
 3. **Access the Flask application:**
    The application will be running at `http://localhost:5000`. You can interact with the API using tools like Postman or cURL. 
    With an example of json:
+```
    {
   "user_id": 12346,
   "session_id": 67892,
@@ -84,13 +85,14 @@ project/
   "timestamp": "2024-08-12T15:36:00Z",  // ISO 8601 format timestamp (optional as default is CURRENT_TIMESTAMP)
   "device_type": "PC"
    }
+```
 
 
 ## Database Schema
 
 The database schema is initialized using the `init.sql` script located in the `db/` directory. The database contains a single table named `user_metrics`:
 
-\`\`\`sql
+```sql
 CREATE TABLE user_metrics (
     id SERIAL PRIMARY KEY,
     user_id INT NOT NULL,
@@ -106,7 +108,7 @@ CREATE TABLE user_metrics (
 CREATE INDEX idx_user_id ON user_metrics(user_id);
 CREATE INDEX idx_session_id ON user_metrics(session_id);
 CREATE INDEX idx_timestamp ON user_metrics(timestamp);
-\`\`\`
+```
 
 ### Schema Explanation
 - **user_metrics**: This table stores metrics related to user sessions.
